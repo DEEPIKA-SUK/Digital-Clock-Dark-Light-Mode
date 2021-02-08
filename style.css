@@ -1,0 +1,47 @@
+:root {
+  --body-color: black;
+  --mode: "Light Mode";
+  --mode-color: #fff;
+  --clock-color: #17d4fe;
+}
+[data-theme="light"] {
+  --body-color: #fff;
+  --mode: "Dark Mode";
+  --mode-color: darkslategray;
+  --clock-color: rgb(192, 59, 148);
+}
+body {
+  background: var(--body-color);
+}
+.view-mode {
+  content: "light";
+  position: absolute;
+  background: var(--mode-color);
+  top: 30px;
+  right: 230px;
+  width: 20px;
+  height: 20px;
+  font-size: 28px;
+  border-radius: 50%;
+  color: var(--mode-color);
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.view-mode::before {
+  position: absolute;
+  left: 25px;
+  content: var(--mode);
+  white-space: nowrap;
+}
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: var(--clock-color);
+  font-size: 60px;
+  font-family: Orbitron;
+  letter-spacing: 7px;
+}
